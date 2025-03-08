@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS Budget for EC2 costs across all regions'
+
+Parameters:
+  NotificationEmail:
+    Type: String
+    Description: Email address to receive budget notifications
+
+Resources:
+  EC2Budget:
+    Type: AWS::Budgets::Budget
+    Properties:
+      Budget:
+        BudgetName: EC2-Global-Budget
+        BudgetLimit:
+          Amount: 1
+          Unit: USD
+        TimeUnit: MONTHLY
+        BudgetType: COST
+        CostFilters: 
+          Service:
+            - Amazon Elastic Compute Cloud - Compute
+        CostTypes:
+          IncludeCredit: true
+          IncludeDiscount: true
+          IncludeRefund: true
+          IncludeSubscription: true
+          IncludeRecurring: true
+          IncludeOtherSubscription: true
+          IncludeTax: true
+          IncludeSupport: false
+          UseBlended: false
+      NotificationsWithSubscribers:
+        - Notification:
+            NotificationType: ACTUAL
+            ComparisonOperator: GREATER_THAN
+            Threshold: 80
+            ThresholdType: PERCENTAGE
+          Subscribers:
+            - SubscriptionType: EMAIL
+              Address: !Ref NotificationEmail
+        - Notification:
+            NotificationType: ACTUAL
+            ComparisonOperator: GREATER_THAN
+            Threshold: 100
+            ThresholdType: PERCENTAGE
+          Subscribers:
+            - SubscriptionType: EMAIL
+              Address: !Ref NotificationEmail
+        - Notification:
+            NotificationType: FORECASTED
+            ComparisonOperator: GREATER_THAN
+            Threshold: 100
+            ThresholdType: PERCENTAGE
+          Subscribers:
+            - SubscriptionType: EMAIL
+              Address: !Ref NotificationEmail

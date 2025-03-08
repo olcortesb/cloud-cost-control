@@ -1,0 +1,3 @@
+# Project
+platform_name = "cost-control"
+s3-bucket     = "your-bucket"
