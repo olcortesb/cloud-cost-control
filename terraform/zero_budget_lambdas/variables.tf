@@ -18,7 +18,7 @@ variable "environment" {
 
 variable "limit_amount" {
   type        = string
-  default     = "1"
+  default     = "0.01"
   description = "Value in dollars of the limit amount per month"
   validation {
     condition     = can(regex("^[0-9]+\\.?[0-9]*$", var.limit_amount))

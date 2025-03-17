@@ -25,6 +25,9 @@ Before you begin, make sure you have the following:
    ```sh
    brew tap hashicorp/tap
    brew install hashicorp/tap/terraform
+   # output example
+   # Terraform v1.11.1
+   # on darwin_amd64
    ```
 2. On Linux, use `wget` and move the binary to `/usr/local/bin`:
    ```sh
@@ -32,10 +35,12 @@ Before you begin, make sure you have the following:
    unzip terraform_X.Y.Z_linux_amd64.zip
    sudo mv terraform /usr/local/bin/
    ```
+3. Install using [tfswitch](https://tfswitch.warrensbox.com/Installation/)
 
 ## 🛠️ Getting Started with Terraform
 
 ### 1. Initialize a Terraform Project
+
 Create a folder for your project and inside it, a `main.tf` file with the desired infrastructure configuration.
 
 ```sh
@@ -44,6 +49,7 @@ cd my-terraform-project
 ```
 
 ### 2. Write the Configuration
+
 Example of a `main.tf` file to define a budget in AWS:
 
 ```hcl
@@ -68,31 +74,41 @@ resource "aws_budgets_budget" "my_budget" {
 ```
 
 ### 3. Initialize Terraform
+
 Run:
+
 ```sh
 terraform init
 ```
+
 This will download the necessary plugins for the cloud provider.
 
 ### 4. Plan the Infrastructure
+
 ```sh
 terraform plan
 ```
+
 This shows a summary of the changes that will be applied.
 
 ### 5. Apply the Configuration
+
 ```sh
 terraform apply
 ```
+
 Confirm with `yes` when prompted.
 
 ### 6. Destroy Resources (Optional)
+
 If you want to delete the created resources, use:
+
 ```sh
 terraform destroy
 ```
 
 ## 📄 Additional Resources
+
 - Official documentation: [Terraform Docs](https://developer.hashicorp.com/terraform/docs)
 - Practical tutorials: [Learn Terraform](https://learn.hashicorp.com/terraform)
 - Example codes: [GitHub Terraform Examples](https://github.com/hashicorp/terraform-provider-aws/tree/main/examples)
