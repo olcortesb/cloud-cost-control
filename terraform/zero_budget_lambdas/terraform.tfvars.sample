@@ -1,0 +1,4 @@
+# Project
+platform_name   = "cost-control"
+s3-bucket       = "terraform-lambdas-commit"
+mail_subscriber = ["your@mail.com"]

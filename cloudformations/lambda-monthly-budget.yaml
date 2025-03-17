@@ -11,9 +11,9 @@ Resources:
     Type: AWS::Budgets::Budget
     Properties:
       Budget:
-        BudgetName: Lambda-Global-Budget
+        BudgetName: Lambda-Zero-Global-Budget
         BudgetLimit:
-          Amount: 1
+          Amount: "0.01"
           Unit: USD
         TimeUnit: MONTHLY
         BudgetType: COST

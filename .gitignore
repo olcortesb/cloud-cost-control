@@ -42,3 +42,5 @@ terraform/zero_budget_all_services/terraform.tfstate.backup
 terraform/zero_budget_all_services/terraform.tfvars
 terraform/zero_budget_all_services/.terraform.lock.hcl
 terraform/general_budget/terraform.tfvars
+terraform/zero_budget_lambdas/terraform.tfvars
+terraform/zero_budget_lambdas/.terraform.lock.hcl
