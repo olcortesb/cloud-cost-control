@@ -139,6 +139,7 @@ for a reference of command write `.``
 
 ## Additional Resources
 
+- **Examples Queries** [Steampipe Examples](https://steampipe.io/docs/develop/writing-example-queries)
 - **Official Documentation:** [Steampipe Docs](https://steampipe.io/docs)
 - **GitHub Repository:** [Steampipe on GitHub](https://github.com/turbot/steampipe)
 - **Plugins:** [Available Plugins](https://steampipe.io/plugins)

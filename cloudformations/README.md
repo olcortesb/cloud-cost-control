@@ -48,6 +48,7 @@ The template configures three notification thresholds:
 5. Review and create the stack
 
 ### Using AWS CLI
+
 ```bash
 # For general budget
 aws cloudformation create-stack \
@@ -55,7 +56,6 @@ aws cloudformation create-stack \
   --template-body file://monthly-budget.yaml \
   --parameters ParameterKey=NotificationEmail,ParameterValue=your.email@example.com
 ```
-
 
 ```bash
 # For lambda services budget
@@ -65,4 +65,10 @@ aws cloudformation create-stack \
   --parameters ParameterKey=NotificationEmail,ParameterValue=your.email@example.com
 ```
 
-
+```bash
+# For ec2 services budget
+aws cloudformation create-stack \
+  --stack-name lambda-dollar-budget \
+  --template-body file://cloudformations/ec2-monthly-budget.yaml \
+  --parameters ParameterKey=NotificationEmail,ParameterValue=your.email@example.com
+```
